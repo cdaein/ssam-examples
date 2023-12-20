@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       SKETCH: JSON.stringify(env.SKETCH),
     },
     plugins: [
-      ssamExport(),
+      ssamExport({ outDir: `./docs` }),
       ssamGit(),
       ssamFfmpeg(),
       // ssamTimelapse(),
