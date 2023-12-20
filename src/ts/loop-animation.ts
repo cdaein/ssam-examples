@@ -40,7 +40,8 @@ const sketch = ({ wrap, context: ctx }: SketchProps) => {
 
 const settings: SketchSettings = {
   dimensions: [800, 800],
-  pixelRatio: window.devicePixelRatio,
+  // pixelRatio: window.devicePixelRatio,
+  pixelRatio: 1,
   animate: true,
   duration: 4000,
   // you can have different fps for browser playing and exported file
