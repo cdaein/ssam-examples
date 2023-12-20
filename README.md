@@ -16,6 +16,10 @@ SKETCH=basic-drawing npm run dev
 
 ...
 
+## Create your own sketch
+
+Check out the [Ssam documentation](https://github.com/cdaein/ssam/wiki) to learn how to create a creative coding sketch with Ssam. It is recommended that you use `npm create ssam@latest` command to set up your own sketch from scratch. This repo has its own compilation and config setup which may not work well for other situations.
+
 ## Build
 
 To build JS version from TypeScript sketches in `src/ts`, run:
