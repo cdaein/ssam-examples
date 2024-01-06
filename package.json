@@ -11,13 +11,21 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@thi.ng/defmulti": "^3.0.14",
+    "@thi.ng/geom": "^6.0.17",
+    "@thi.ng/geom-api": "^3.4.56",
+    "@thi.ng/hiccup-canvas": "^2.5.4",
+    "@thi.ng/sax": "^2.1.89",
+    "@thi.ng/transducers": "^8.8.20",
+    "@types/paper": "^0.12.3",
+    "paper": "^0.12.17",
     "ssam": "^0.12.1"
   },
   "devDependencies": {
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.10.6",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10",
+    "vite": "^5.0.11",
     "vite-plugin-ssam-export": "^0.1.1",
     "vite-plugin-ssam-ffmpeg": "^0.1.0",
     "vite-plugin-ssam-git": "^0.1.2",

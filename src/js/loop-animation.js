@@ -1,4 +1,6 @@
-// looping animation with `props.playhead`
+/**
+ * loop animation with `props.playhead`
+ */
 import { ssam } from "ssam";
 const sketch = ({ wrap, context: ctx }) => {
   // hot reloading
@@ -29,7 +31,8 @@ const sketch = ({ wrap, context: ctx }) => {
 };
 const settings = {
   dimensions: [800, 800],
-  pixelRatio: window.devicePixelRatio,
+  // pixelRatio: window.devicePixelRatio,
+  pixelRatio: 1,
   animate: true,
   duration: 4000,
   // you can have different fps for browser playing and exported file

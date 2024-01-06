@@ -34,7 +34,8 @@ const sketch = ({ wrap, context: ctx }) => {
 };
 const settings = {
   dimensions: [800, 800],
-  pixelRatio: window.devicePixelRatio,
+  // pixelRatio: window.devicePixelRatio,
+  pixelRatio: 1,
   animate: false,
   filename: import.meta.url?.split("/").pop()?.split(".")[0] || undefined,
 };
