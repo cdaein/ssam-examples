@@ -1,6 +1,6 @@
 # Ssam Examples
 
-Sketches created with [Ssam.js](https://github.com/cdaein/ssam) to demonstrate its use.
+Sketches created with [Ssam.js](https://github.com/cdaein/ssam) to demonstrate common use cases.
 
 Written with TypeScript. You can find JavaScript versions inside `src/js`, which are automatically compiled from TS sketches.
 
@@ -18,7 +18,7 @@ SKETCH=basic-drawing npm run dev
 
 ## Create your own sketch
 
-Check out the [Ssam documentation](https://github.com/cdaein/ssam/wiki) to learn how to create a creative coding sketch with Ssam. It is recommended that you use `npm create ssam@latest` command to set up your own sketch with one of the provided templates. This repo has its own compilation and config setup which may not work well for other situations.
+Check out the [Ssam documentation](https://github.com/cdaein/ssam/wiki) to learn how to create a creative coding sketch with Ssam. It is recommended that you use `npm create ssam@latest` command to set up your own sketch with one of the provided templates.
 
 ## Build
 
