@@ -7,6 +7,7 @@ import type { Sketch, SketchProps, SketchSettings } from "ssam";
 import { ssam } from "ssam";
 
 const sketch = ({ wrap, canvas, context: ctx }: SketchProps) => {
+  // hot reloading
   if (import.meta.hot) {
     import.meta.hot.dispose(() => wrap.dispose());
     import.meta.hot.accept(() => wrap.hotReload());
@@ -19,14 +20,15 @@ const sketch = ({ wrap, canvas, context: ctx }: SketchProps) => {
 
   const brushSize = 40;
 
-  canvas.addEventListener("mousedown", (e) => {
+  const handleMouseDown = (e: MouseEvent) => {
     mouse[0] = e.offsetX;
     mouse[1] = e.offsetY;
 
     drawing = true;
     paths.push([]);
-  });
-  canvas.addEventListener("mousemove", (e) => {
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
     pmouse[0] = mouse[0];
     pmouse[1] = mouse[1];
     mouse[0] = e.offsetX;
@@ -36,10 +38,15 @@ const sketch = ({ wrap, canvas, context: ctx }: SketchProps) => {
       console.log(e.offsetX, e.offsetY, mouse[0], mouse[1]);
       paths[paths.length - 1].push([...mouse]);
     }
-  });
-  canvas.addEventListener("mouseup", () => {
+  };
+
+  const handleMouseUp = () => {
     drawing = false;
-  });
+  };
+
+  canvas.addEventListener("mousedown", handleMouseDown);
+  canvas.addEventListener("mousemove", handleMouseMove);
+  canvas.addEventListener("mouseup", handleMouseUp);
 
   ctx.lineCap = `round`;
 
@@ -60,6 +67,14 @@ const sketch = ({ wrap, canvas, context: ctx }: SketchProps) => {
     ctx.lineWidth = 1;
     ctx.strokeStyle = `white`;
     ctx.stroke();
+  };
+
+  // when using hot reloading, make sure to remove side effects.
+  // otherwise, listeners will pile up.
+  wrap.unload = () => {
+    canvas.removeEventListener("mousedown", handleMouseDown);
+    canvas.removeEventListener("mousemove", handleMouseMove);
+    canvas.removeEventListener("mouseup", handleMouseUp);
   };
 };
 
