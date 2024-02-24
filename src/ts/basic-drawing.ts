@@ -2,10 +2,10 @@
  * basic drawing with the vanilla 2D Canvas API
  */
 
-import type { Sketch, SketchProps, SketchSettings } from "ssam";
+import type { Sketch, SketchSettings } from "ssam";
 import { ssam } from "ssam";
 
-const sketch = ({ wrap, context: ctx }: SketchProps) => {
+const sketch: Sketch<"2d"> = ({ wrap, context: ctx }) => {
   // hot reloading
   if (import.meta.hot) {
     import.meta.hot.dispose(() => wrap.dispose());
@@ -49,4 +49,4 @@ const settings: SketchSettings = {
   filename: import.meta.url?.split("/").pop()?.split(".")[0] || undefined,
 };
 
-ssam(sketch as Sketch, settings);
+ssam(sketch, settings);
